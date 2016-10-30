@@ -12,12 +12,21 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
- <!--       <start-class>configuration.ShowMeAngular</start-class>-->
     </properties>
 
     <artifactId>showme-angular</artifactId>
 
     <dependencies>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-tomcat</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -32,7 +41,28 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
-
-
+        <dependency>
+            <groupId>org.showme.common</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
+
+<build>
+       <plugins>
+           <plugin>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-maven-plugin</artifactId>
+               <dependencies>
+                   <dependency>
+                       <groupId>org.springframework</groupId>
+                       <artifactId>springloaded</artifactId>
+                       <version>1.2.1.RELEASE</version>
+                   </dependency>
+               </dependencies>
+
+           </plugin>
+       </plugins>
+   </build>
+
 </project>

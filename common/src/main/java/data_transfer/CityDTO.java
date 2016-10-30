@@ -1,6 +1,6 @@
 package data_transfer;
 
-public class CityDTO {
+public class CityDTO implements ApiResponse{
 
     private Long Id;
     private String name;
@@ -53,4 +53,14 @@ public class CityDTO {
     }
 
 
+    @Override
+    public String toString() {
+        return "CityDTO{" +
+                "Id=" + Id +
+                ", name='" + name + '\'' +
+                ", countryCode='" + countryCode + '\'' +
+                ", district='" + district + '\'' +
+                ", info='" + info + '\'' +
+                '}';
+    }
 }

@@ -12,7 +12,7 @@
     <name>ShowMe-Code</name>
     <description>Project for Learning</description>
 
-    <parent>
+ <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.4.1.RELEASE</version>
@@ -22,17 +22,9 @@
     <modules>
         <module>showme-angular</module>
         <module>common</module>
+        <module>showme-ui</module>
     </modules>
     <dependencies>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>ma.glasnost.orika</groupId>
@@ -41,23 +33,7 @@
         </dependency>
 
 
+
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.springframework</groupId>
-                        <artifactId>springloaded</artifactId>
-                        <version>1.2.1.RELEASE</version>
-                    </dependency>
-                </dependencies>
-
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
