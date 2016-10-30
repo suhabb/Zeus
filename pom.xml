@@ -20,7 +20,7 @@
     </parent>
 
     <modules>
-        <module>showme-angular</module>
+        <module>showme-service</module>
         <module>common</module>
         <module>showme-ui</module>
     </modules>

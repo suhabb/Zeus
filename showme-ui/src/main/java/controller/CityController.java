@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import service_access.CityApplicationServiceAccess;
 
 @Controller
@@ -22,9 +23,10 @@ public class CityController {
     }
 
     @RequestMapping("/test")
-    public void test(){
-        System.out.println("CityController.test");
-        System.out.println("CityController.getCityInfo:");
+    @ResponseBody
+    public String test(){
+        return "Server Test:Success";
+
     }
 
 

@@ -12,10 +12,10 @@ import org.springframework.context.annotation.ImportResource;
 @ComponentScan(basePackages = "${scan.packages}")
 @EntityScan("domain")
 @ImportResource("my-jpa-config.xml")
-public class ShowMeAngular {
+public class ShowMeService {
 
 
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(ShowMeAngular.class, args);
+        SpringApplication.run(ShowMeService.class, args);
     }
 }

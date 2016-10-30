@@ -35,6 +35,7 @@ public class CityRestController {
 
         System.out.println("CityController.findCity");
         CityDTO cityDTO = cityApplicationService.findByCountryCode(countrycode);
+        System.out.println("CityRestController.findByCountryCode:"+cityDTO);
         return cityDTO;
     }
 
