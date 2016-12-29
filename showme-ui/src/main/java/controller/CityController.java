@@ -29,5 +29,10 @@ public class CityController {
 
     }
 
+    @RequestMapping("/city")
+    public String getCityInfo(){
+        return "html/city";
+    }
+
 
 }

@@ -19,12 +19,18 @@
         <relativePath/>
     </parent>
 
+
     <modules>
         <module>showme-service</module>
         <module>common</module>
         <module>showme-ui</module>
     </modules>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
 
         <dependency>
             <groupId>ma.glasnost.orika</groupId>

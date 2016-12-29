@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html  ng-app="sportsStore" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SportsStore</title>
+    <link rel="stylesheet" type="text/css" href="..\..\static\css\bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" type="text/css" href="..\..\static\css\bootstrap-theme.css" th:href="@{/css/bootstrap-theme.css}"/>
+   
+</head>
+<body  ng-controller="sportsStoreCtrl">
+<div class="navbar navbar-inverse">
+    <a class="navbar-brand" href="#">SPORTS STORE</a>
+</div>
+<div class="panel panel-default row">
+    <div class="col-xs-3">
+        <a ng-click="selectCategory()"
+        class="btn btn-block btn-default btn-lg">Home</a>
+        <a ng-repeat="item in data.products | orderBy:'category' | unique:'category'"
+        ng-click="selectCategory(item)" class=" btn btn-block btn-default btn-lg">
+        {{item}}
+        </a>
+    </div>
+    <div class="col-xs-8">
+        <div class="well" ng-repeat="item in data.products">
+        <h3>
+            <strong>{{item.name}}</strong>
+            <span class="pull-right label label-primary">
+                {{item.price | currency}}
+            </span>
+        </h3>
+        <span class="lead">{{item.description}}</span>
+        </div>
+    </div>
+</div>
+</body>
+
+<script  src="..\..\static\js\jquery-1.11.3.js" th:src="@{/js/jquery-1.11.3.js}"></script>
+<script src="..\..\static\js\bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+<script src="..\..\static\js\angular.js" th:src="@{/js/angular.js}"></script>
+<script>
+    angular.module("sportsStore", ["customFilters"]);
+</script>
+<script src="..\..\static\controller\sports_store_controller.js" th:src="@{/controller/sports_store_controller.js}"></script>
+<script src="..\..\static\filter\sports_customFilters.js" th:src="@{/controller/sports_customFilters.js}"></script>
+</html>
