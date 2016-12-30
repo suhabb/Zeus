@@ -26,11 +26,11 @@
     angular.module("sportsStore", ["customFilters","cart","ngRoute"])
     .config(function ($routeProvider) {
         $routeProvider.when("/complete", {
-            templateUrl: "/views/thankYou.html"
+            templateUrl: "../view/thankYou.html"
         });
-        
+
         $routeProvider.when("/placeorder", {
-            templateUrl: "/views/placeOrder.html"
+            templateUrl: "../view/placeOrder.html"
         });
 
         $routeProvider.when("/checkout", {
