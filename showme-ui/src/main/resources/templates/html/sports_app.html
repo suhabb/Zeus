@@ -26,11 +26,11 @@
     angular.module("sportsStore", ["customFilters","cart","ngRoute"])
     .config(function ($routeProvider) {
         $routeProvider.when("/complete", {
-            templateUrl: "/views/thankYou.html"
+            templateUrl: "../view/thankYou.html"
         });
-        
+
         $routeProvider.when("/placeorder", {
-            templateUrl: "/views/placeOrder.html"
+            templateUrl: "../view/placeOrder.html"
         });
 
         $routeProvider.when("/checkout", {
@@ -40,9 +40,9 @@
             templateUrl: "../view/productList.html"
         });
         $routeProvider.otherwise({
-            templateUrl: "../view/productList.html"
+           templateUrl: "../view/productList.html"
         });
-    });;
+    });
 </script>
 <script src="..\..\static\controller\sports_store_controller.js" th:src="@{/controller/sports_store_controller.js}"></script>
 <script src="..\..\static\filter\sports_customFilters.js" th:src="@{/filter/sports_customFilters.js}"></script>

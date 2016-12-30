@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="sportsStoreAdmin" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="..\..\static\css\bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" type="text/css" href="..\..\static\css\bootstrap-theme.css"
+    th:href="@{/css/bootstrap-theme.css}"/>
+    <title>Administration</title>
+</head>
+<body>
+    <ng-view/>
+</body>
+<script src="..\..\static\js\jquery-1.11.3.js" th:src="@{/js/jquery-1.11.3.js}"></script>
+<script src="..\..\static\js\bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+<script src="..\..\static\js\angular.js" th:src="@{/js/angular.js}"></script>
+
+<script>
+    angular.module("sportsStoreAdmin", ["ngRoute"])
+    .config(function ($routeProvider) {
+        $routeProvider.when("/login", {
+            templateUrl: "../view/adminLogin.html"
+        });
+        $routeProvider.when("/main", {
+            templateUrl: "../view/adminMain.html"
+        });
+        $routeProvider.otherwise({
+            redirectTo: "/login"
+        });
+    });
+</script>
+<script src="..\..\static\ngmodule\angular-route.js" th:src="@{/ngmodule/angular-route.js}"></script>
+ <script src="..\..\static\controller\adminController.js" th:src="@{/controller/adminController.js}"></script>
+</html>
