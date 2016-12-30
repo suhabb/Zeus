@@ -2,7 +2,7 @@
   "price":275,"id":"05af70919155f8fc"},
   {"category":"Watersports", "description":"Protective and fashionable",
     "name":"Lifejacket","price":48.95,"id":"3d31d81b218c98ef"},
-  {"category":"Soccer","description":"FIFA-approved size and weight",
+  {"category":" ","description":"FIFA-approved size and weight",
     "name":"Soccer Ball","price":19.5,"id":"437615faf1d38815"},
   {"category":"Soccer","description":"Give your playing field a professional touch",
     "name":"Corner Flags","price":34.95,"id":"93c9cc08ac2f28d4"},

@@ -1,6 +1,7 @@
 package data_transfer;
 
 
+import java.util.List;
 import java.util.Random;
 
 public class OrderDTO implements ApiResponse {
@@ -12,14 +13,27 @@ public class OrderDTO implements ApiResponse {
     private String state;
     private String zip;
     private String country;
+    private List<ProductDTO> productDTOList;
+
+
+    public OrderDTO(int id, String name, String street, String city, String state, String zip, String country, List<ProductDTO> productDTO) {
+        this.id = id;
+        this.name = name;
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+        this.country = country;
+        this.productDTOList = productDTO;
+    }
 
     public int getId() {
-        Integer orderId= new Random().nextInt(90000) + 10000;
+        Integer orderId = new Random().nextInt(90000) + 10000;
         return orderId;
     }
 
     public void setId(int id) {
-      this.id =id;
+        this.id = id;
 
     }
 
@@ -71,6 +85,14 @@ public class OrderDTO implements ApiResponse {
         this.state = state;
     }
 
+
+    public List<ProductDTO> getProductDTO() {
+        return productDTOList;
+    }
+
+    public void setProductDTO(List<ProductDTO> productDTO) {
+        this.productDTOList = productDTO;
+    }
     @Override
     public String toString() {
         return "OrderDTO{" +
