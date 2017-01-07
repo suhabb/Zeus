@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html  ng-app="scopeLessApp" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" type="text/css" href="..\..\static\css\bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+	<link rel="stylesheet" type="text/css" href="..\..\static\css\bootstrap-theme.css" th:href="@{/css/bootstrap-theme.css}"/>
+	<title>Controller Less Scopes</title>
+</head>
+
+
+<body">
+<div class="well" ng-controller="scopeLessCtrl as ctrl">
+	<h4>Top Level Controller</h4>
+	<div class="input-group">
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="button"
+			ng-click="ctrl.reverseText()">Reverse</button>
+		</span>
+		<input class="form-control" ng-model="ctrl.dataValue">
+	</div>
+</div>
+</body>
+<script  src="..\..\static\js\jquery-1.11.3.js" th:src="@{/js/jquery-1.11.3.js}"></script>
+<script src="..\..\static\js\bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+<script src="..\..\static\js\angular.js" th:src="@{/js/angular.js}"></script>
+<script src="..\..\static\controller\scopeLessController.js" th:src="@{/controller/scopeLessController.js}"></script>
+</html>

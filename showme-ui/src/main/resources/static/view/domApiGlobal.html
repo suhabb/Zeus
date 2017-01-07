@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html  ng-app="domApiApp" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" type="text/css" href="..\..\static\css\bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+	<link rel="stylesheet" type="text/css" href="..\..\static\css\bootstrap-theme.css" th:href="@{/css/bootstrap-theme.css}"/>
+	<title>Controller Less Scopes</title>
+</head>
+
+
+<body>
+	<body ng-controller="apiDomCtrl" class="well">
+		<button class="btn btn-primary" ng-click="displayAlert('Clicked!')">Click Me</button>
+		<button class="btn btn-primary">Click Me</button>
+		<div class="panel-body">
+			The time is: {{time}}
+		</div>
+		<div class="panel-body">
+			<button class="btn btn-primary" ng-click="throwEx()">Throw Exception</button>
+		</div>
+	</body>
+</body>
+<script  src="..\..\static\js\jquery-1.11.3.js" th:src="@{/js/jquery-1.11.3.js}"></script>
+<script src="..\..\static\js\bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+<script src="..\..\static\js\angular.js" th:src="@{/js/angular.js}"></script>
+<script src="..\..\static\controller\domApiController.js" th:src="@{/controller/domApiController.js}"></script>
+</html>

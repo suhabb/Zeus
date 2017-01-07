@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html  ng-app="exampleApp" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" type="text/css" href="..\..\static\css\bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+	<link rel="stylesheet" type="text/css" href="..\..\static\css\bootstrap-theme.css" th:href="@{/css/bootstrap-theme.css}"/>
+	<title>AngularJS Demo</title>
+</head>
+<body>
+	<div class="panel" ng-controller="dayCtrl">
+		<div class="page-header">
+			<h3>AngularJS App</h3>
+		</div>
+		<h4 highlight="Friday">Today is {{day || "(unknown)" | dayName}}</h4>
+		<h4>Tomorrow is {{tomorrow || "(unknown)" | dayName}}</h4>
+	</div>
+</body>
+<script  src="..\..\static\js\jquery-1.11.3.js" th:src="@{/js/jquery-1.11.3.js}"></script>
+<script src="..\..\static\js\bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+<script src="..\..\static\js\angular.js" th:src="@{/js/angular.js}"></script>
+<script src="..\..\static\service_js\worldPlace.js" th:src="@{/service_js\worldPlace.js}"></script>
+
+</html>

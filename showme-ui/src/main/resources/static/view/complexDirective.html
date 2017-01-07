@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html  ng-app="complexDirectiveApp" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" type="text/css" href="..\..\static\css\bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+	<link rel="stylesheet" type="text/css" href="..\..\static\css\bootstrap-theme.css" th:href="@{/css/bootstrap-theme.css}"/>
+	<title>Custom Complex Directives</title>
+</head>
+<body ng-controller="complexDirectiveAppCtrl">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3>Products</h3>
+		</div>
+		<div class="panel-body">
+			<div unordered-list="products" list-property="price | currency"></div>
+			<div class="unordered-list: products" list-property="price | currency"></div>
+			<div>
+				<!-- directive: unordered-list products -->
+			</div>
+			<div template-list="vegetables">Template</div>
+			<div templateurl-list="products" template="table">
+				This is where the list will go
+			</div>
+		</div>
+		<div class="panel-body" scope-demo></div><div class="panel-body" scope-demo></div>
+		<div class="panel panel-default">
+			<div class="panel-body">
+				Direct Binding: <input ng-model="data.name" />
+			</div>
+		
+			<div class="panel-body" scope-demo nameprop="data.name"></div>
+		</div>
+	</div>
+</body>
+<script  src="..\..\static\js\jquery-1.11.3.js" th:src="@{/js/jquery-1.11.3.js}"></script>
+<script src="..\..\static\js\bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+<script src="..\..\static\js\angular.js" th:src="@{/js/angular.js}"></script>
+<script type="text/ng-template" id="scopeTemplate">
+	<div class="panel-body">
+		<p>Data Value: {{local}}</p>
+	</div>
+</script>
+<script src="..\..\static\directives\complexDirective.js" th:src="@{/directives/complexDirective.js}"></script>
+
+</html>

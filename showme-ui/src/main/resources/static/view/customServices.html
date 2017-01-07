@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html  ng-app="customServiceApp" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" type="text/css" href="..\..\static\css\bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+	<link rel="stylesheet" type="text/css" href="..\..\static\css\bootstrap-theme.css" th:href="@{/css/bootstrap-theme.css}"/>
+	<title>Custom Services Demo</title>
+</head>
+<body ng-controller="customServiceCtrl">
+	<div class="well">
+		<div class="btn-group" tri-button counter="data.totalClicks" source="data.cities">
+		<button class="btn btn-default"ng-repeat="city in data.cities">
+		{{city}}
+	</button>
+</div>
+<h5>Total Clicks: {{data.totalClicks}}</h5>
+</div>
+</body>
+
+<script  src="..\..\static\js\jquery-1.11.3.js" th:src="@{/js/jquery-1.11.3.js}"></script>
+<script src="..\..\static\js\bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+<script src="..\..\static\js\angular.js" th:src="@{/js/angular.js}"></script>
+<script src="..\..\static\service_js\customServices.js" th:src="@{/service_js/customServices.js}"></script>
+<script src="..\..\static\directives\customDirectivesCollection.js" th:src="@{/directives/customDirectivesCollection.js}"></script>
+</html>
