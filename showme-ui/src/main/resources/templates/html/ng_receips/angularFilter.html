@@ -1,0 +1,26 @@
+<!--You wish to reverse user’s text input.
+Solution
+Implement a custom filter, which reverses the input.-->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="..\..\..\static\css\bootstrap.css" th:href="@{/css/bootstrap.css}" />
+    <link rel="stylesheet" type="text/css" href="..\..\..\static\css\bootstrap-theme.css" th:href="@{/css/bootstrap-theme.css}" />
+</head>
+
+<body ng-app="filterApp">
+    <input type="text" ng-model="text" placeholder="Enter text" />
+    <p>Input: {{ text }}</p>
+    <p>Filtered input: {{ text | reverse :true}}</p>
+</body>
+
+<script src="..\..\..\static\js\jquery-1.11.3.js" th:src="@{/js/jquery-1.11.3.js}"></script>
+<script src="..\..\..\static\js\bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+<script src="..\..\..\static\js\angular.js" th:src="@{/js/angular.js}"></script>
+<script src="..\..\..\static\ng_receipes_js\angularFilter.js" th:src="@{/ng_receipes_js/angularFilter.js}"></script>
+
+</html>
+<!-- Solution
+Angular’s filter function expects a filter name and a function as params. The function must return
+the actual filter function where you implement the business logic. In this example it will only have
+an input param. The result will be returned after the for loop has reversed the input.-->

@@ -1,0 +1,32 @@
+<!--Changing the DOM in Response to User Actions
+Problem
+You wish to change the CSS of an HTML element on a mouse click and encapsulate this behavior
+in a reusable component.-->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="..\..\..\static\css\bootstrap.css" th:href="@{/css/bootstrap.css}" />
+    <link rel="stylesheet" type="text/css" href="..\..\..\static\css\bootstrap-theme.css" th:href="@{/css/bootstrap-theme.css}" />
+</head>
+
+<body ng-app="passConfigApp">
+    <div ng-controller="passAppController">
+        {{text}}
+        <!--  <div my-widget="Hello World"></div> -->
+        <my-widget2 text="HelloWorld" info="InSingle"></my-widget2>
+    </div>
+
+    <basket apple orange>Roll over me and check the console!</basket>
+</body>
+<script src="..\..\..\static\js\jquery-1.11.3.js" th:src="@{/js/jquery-1.11.3.js}"></script>
+<script src="..\..\..\static\js\bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+<script src="..\..\..\static\js\angular.js" th:src="@{/js/angular.js}"></script>
+<script src="..\..\..\static\ng_receipes_js\passConfigurationParamsDirective.js" th:src="@{/ng_receipes_js/passConfigurationParamsDirective.js}"></script>
+
+</html>
+<!-- Solution
+The link function has access to the element and its attributes. It is therefore straightforward to set
+the scope to the text passed as the attributes value and use this in the template evaluation.
+The scope context is important though. The text model we changed might already be defined in the
+parent scope and used in another part of your app. In order to isolate the context and thereby use it
+only locally inside your directive, we have to return an additional scope attribute.: -->

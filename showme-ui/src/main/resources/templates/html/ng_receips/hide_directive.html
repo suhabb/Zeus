@@ -1,0 +1,26 @@
+<!--Problem:You wish to hide an HTML element on button click.-->
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="..\..\..\static\css\bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" type="text/css" href="..\..\..\static\css\bootstrap-theme.css" th:href="@{/css/bootstrap-theme.css}"/>
+</head>
+<body ng-app="receipsApp">
+<div ng-controller="MyCtrl">
+
+<button ng-click="toggle()">Toggle</button>
+    <p ng-show="visible">Hello World!!</p>
+</div>
+</body>
+
+<script  src="..\..\..\static\js\jquery-1.11.3.js" th:src="@{/js/jquery-1.11.3.js}"></script>
+<script src="..\..\..\static\js\bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+<script src="..\..\..\static\js\angular.js" th:src="@{/js/angular.js}"></script>
+<script src="..\..\..\static\ng_receipes_js\hide.js" th:src="@{/ng_receipes_js/hide.js}"></script>
+</html>
+
+<!-- Solution
+Use the ng-hide directive in conjunction with a controller to change the visibility status on button
+click. The controller implementation defaults the visible attribute to true and toggles its Boolean state in
+the toggle function. Both the visible variable and the toggle function are defined on the $scope
+service which is passed to all controller functions automatically via dependency injection.
+The next chapter will go into all the details of controllers in Angular. For now let us quickly discuss -->

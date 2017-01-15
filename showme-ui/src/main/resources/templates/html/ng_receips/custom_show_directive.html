@@ -1,0 +1,31 @@
+<!--Problem:You wish to render an HTML snippet but hide it conditionally.-->
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="..\..\..\static\css\bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" type="text/css" href="..\..\..\static\css\bootstrap-theme.css" th:href="@{/css/bootstrap-theme.css}"/>
+</head>
+<body ng-app="receipsApp">
+<div ng-controller="ShowHideCtrl">
+
+	<label for="checkbox">
+	<input id="checkbox" type="checkbox" ng-model="visible">Toggle me
+	 </label>
+	<div show="visible">
+	 <p>Hello World</p>
+	</div>
+</body>
+
+<script  src="..\..\..\static\js\jquery-1.11.3.js" th:src="@{/js/jquery-1.11.3.js}"></script>
+<script src="..\..\..\static\js\bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+<script src="..\..\..\static\js\angular.js" th:src="@{/js/angular.js}"></script>
+<script src="..\..\..\static\ng_receipes_js\hide.js" th:src="@{/ng_receipes_js/hide.js}"></script>
+</html>
+
+<!-- Solution
+Create a custom directive which renders your Hello World snippet.s The browser will only show the “Hello World” paragraph if the checkbox is checked and will hide
+it otherwise.The directive implementation returns a link function which defines the directive’s behavior. It gets
+passed the scope, the HTML element and the HTML attributes. Since we passed the visible
+variable as an attribute to our show directive, we can access it directly via attributes.show. But,
+since we want to respond to visible variable changes automatically we have to use the $watch
+service, which provides us with a function callback whenever the value changes. In this callback we
+change the CSS display property to either blank or none to hide the HTML element.-->

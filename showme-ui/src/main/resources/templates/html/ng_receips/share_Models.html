@@ -1,0 +1,44 @@
+<!--Sharing Models Between Nested Controllers
+Problem
+You wish to share a model between a nested hierarchy of controllers.-->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="..\..\..\static\css\bootstrap.css" th:href="@{/css/bootstrap.css}" />
+    <link rel="stylesheet" type="text/css" href="..\..\..\static\css\bootstrap-theme.css" th:href="@{/css/bootstrap-theme.css}" />
+</head>
+
+<body ng-app="shareModelApp">
+    <div ng-controller="MyCtrl">
+        <label>Primitive</label>
+        <input type="text" ng-model="name">
+        <label>Object</label>
+        <input type="text" ng-model="user.name">
+        <div class="nested" ng-controller="MyNestedCtrl">
+            <label>Primitive</label>
+            <input type="text" ng-model="name">
+            <label>Primitive with explicit $parent reference</label>
+            <input type="text" ng-model="$parent.name">
+            <label>Object</label>
+            <input type="text" ng-model="user.name">
+        </div>
+</body>
+<script src="..\..\..\static\js\jquery-1.11.3.js" th:src="@{/js/jquery-1.11.3.js}"></script>
+<script src="..\..\..\static\js\bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+<script src="..\..\..\static\js\angular.js" th:src="@{/js/angular.js}"></script>
+<script src="..\..\..\static\ng_receipes_js\shareModels.js" th:src="@{/ng_receipes_js/shareModels.js}"></script>
+
+</html>
+<!-- Solution
+Use Javascript objects instead of primitives or direct $parent scope references.
+Our example template uses a controller MyCtrl and a nested controller MyNestedCtrl:
+All the default values are defined in MyCtrl which is the parent of MyNestedCtrl. When making
+changes in the first input field, the changes will be in sync with the other input fields bound to the
+name variable. They all share the same scope variable as long as they only read from the variable.
+If you change the nested value, a copy in the scope of the MyNestedCtrl will be created. From now
+on, changing the first input field will only change the nested input field which explicitly references
+the parent scope via $parent.name expression.
+The object-based value behaves differently in this regard. Whether you change the nested or the
+MyCtrl scopes input fields, the changes will stay in sync. In Angular, a scope prototypically inherits
+properties from a parent scope. Objects are therefore references and kept in sync. Whereas primitive
+types are only in sync as long they are not changed in the child scope.: -->
